@@ -1,0 +1,145 @@
+/* General Layout */
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Sleek modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #171b26; /* Dark background */
+    color: #9fa6b7; /* Light font for readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Row Layout for Panels */
+.row {
+    display: flex;
+    flex-wrap: nowrap; /* Keep panels on the same row */
+    justify-content: space-between; /* Space between panels */
+    gap: 20px; /* Space between panels */
+}
+
+.row.full-width {
+    width: 100%; /* Ensures the row spans the full width of the container */
+    justify-content: center; /* Center-align the contents */
+    gap: 0; /* Remove gaps for a seamless full-width row */
+}
+
+/* Panel Styling */
+.panel {
+    padding: 20px;
+    background-color: #262A3A; /* Div background color */
+    border: 1px solid #202535; /* Subtle border for contrast */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: none; /* Remove shadow */
+}
+
+.panel.full-width {
+    width: 100%; /* Ensures the panel takes up all available width */
+}
+
+/* Left Panel: Current Allocation and KPIs */
+.left {
+    flex: 1; /* Dynamic sizing */
+    max-width: 30%; /* Ensure enough space for content */
+    text-align: center;
+}
+
+/* Center Panel: Performance Chart */
+.center {
+    flex: 2; /* Takes up remaining space */
+    max-width: 65%;
+}
+
+/* Search Bar Styling */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#ticker-input {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #202535;
+    border-radius: 5px;
+    background-color: #262A3A;
+    color: #9fa6b7;
+}
+
+#search-button {
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #387EC5;
+}
+
+/* Plotly Chart Customization */
+.plotly-graph-div {
+    margin: 0 auto;
+    max-height: 300px; /* Limit height to fit within the panel */
+}
+
+.plotly {
+    background-color: #262A3A !important; /* Match div background */
+    color: #9fa6b7 !important;
+}
+
+/* Buttons (if applicable) */
+button {
+    background-color: #499BF8; /* Highlight color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #387EC5; /* Slightly darker blue on hover */
+}
+
+.allocation-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.ticker-input, .weight-input {
+    padding: 10px;
+    border: 1px solid #202535;
+    border-radius: 5px;
+    background-color: #262A3A;
+    color: #9fa6b7;
+}
+
+.ticker-input::placeholder, .weight-input::placeholder {
+    color: #9fa6b7;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-wrap: wrap; /* Panels stack vertically on smaller screens */
+    }
+
+    .left, .center, .full-width {
+        max-width: 100%;
+    }
+
+    .center {
+        margin-top: 20px;
+    }
+}

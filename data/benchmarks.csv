@@ -1,0 +1,4 @@
+Name,Tickers,Weights
+100% SPY,SPY,1
+100% World,VT,1
+60% Equity / 40% Bonds,"SPY,IEF","0.6,0.4"
